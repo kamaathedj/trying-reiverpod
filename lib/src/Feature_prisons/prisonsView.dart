@@ -23,16 +23,20 @@ class PrisonsView extends ConsumerWidget {
       ),
       body: prisonRef.when(data: (List<Prison> data) {
         return ListView.builder(
-          itemCount: data.length ,
-          itemBuilder: (BuildContext context, int index,) {
+          itemCount: data.length,
+          itemBuilder: (
+            BuildContext context,
+            int index,
+          ) {
             Prison prison = data[index];
             return ListTile(
+              onTap: ()=>MaterialBanner(content: Text(prison.name), actions: [Text('*')]),
               title: Text(prison.name),
               subtitle: Text(prison.located),
             );
           },
         );
-      }, error: (Object error, _) { 
+      }, error: (Object error, _) {
         return Text('Error loading data');
       }, loading: () {
         return Center(child: CircularProgressIndicator());

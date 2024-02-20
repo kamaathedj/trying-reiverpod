@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Prison {
   String name = '';
   int numberOfPrisoners = 0;
