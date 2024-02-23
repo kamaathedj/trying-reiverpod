@@ -30,7 +30,13 @@ class PrisonsView extends ConsumerWidget {
           ) {
             Prison prison = data[index];
             return ListTile(
-              onTap: ()=>MaterialBanner(content: Text(prison.name), actions: [Text('*')]),
+              onTap: ()=>ScaffoldMessenger.of(context).
+              showMaterialBanner(MaterialBanner
+              (content: Text(prison.name + prison.numberOfPrisoners.toString()),
+               actions: [MaterialButton(
+                onPressed: ()=>ScaffoldMessenger.of(context).removeCurrentMaterialBanner(),child: Text('x'),
+                )
+               ])),
               title: Text(prison.name),
               subtitle: Text(prison.located),
             );
