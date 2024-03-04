@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: FlexThemeData.light(scheme: FlexScheme.bigStone),
+        theme: FlexThemeData.light(scheme: FlexScheme.barossa),
         darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
         home: MyApp());
   }

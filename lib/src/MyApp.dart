@@ -11,16 +11,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: FlexColor.amberDarkPrimary,
         title: Text('Home'),
         leading: Icon(Icons.home_work),
+        actions: [IconButton(
+          onPressed: ()=>{
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('setting Tapped'),backgroundColor: FlexColor.amberDarkPrimary,))
+          },
+           icon: Icon(Icons.settings))],
       ),
-      body: Center(
-        child: MaterialButton(
-          child: Text('press me'),
-          onPressed: () => Navigator.push(
+      body:Text("nanan"),
+      floatingActionButton: FloatingActionButton(
+        onPressed:() => Navigator.push(
               context, MaterialPageRoute(builder: (context) => PrisonsView())),
-        ),
+        child: Text("->"),
       ),
     );
   }

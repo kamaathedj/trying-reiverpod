@@ -11,7 +11,8 @@ class PrisonService {
     Prison('Langata', 5000, 'Nairobi count, kenya'),
     Prison('Industrial area', 8000, 'Nairobi county, kenya'),
     Prison('Kisii gen pop', 6000, 'kisii county, kenya'),
-    Prison('fox river', 3000, 'Denver USA')
+    Prison('fox river', 3000, 'Denver USA'),
+    Prison("Kiambu remand", 1000, "kiambu county, kenya")
   ]);
 
   Future<List<Prison>> getPrisons() {
@@ -20,5 +21,9 @@ class PrisonService {
 
   void addPrisons() {
     prisons.add(Prison('another', 100, 'guantanamo bay'));
+  }
+
+  void deletePrisoner() {
+    print("in delete method");
   }
 }
